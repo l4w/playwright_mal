@@ -1,8 +1,7 @@
 import os
 
-from playwright.sync_api import Page
 from dotenv import load_dotenv
-
+from playwright.sync_api import Page
 
 load_dotenv()
 

@@ -1,5 +1,4 @@
 import pytest
-import logging
 from playwright.sync_api import Browser, BrowserContext, Page, sync_playwright
 
 
