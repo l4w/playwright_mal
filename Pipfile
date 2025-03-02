@@ -5,5 +5,9 @@ name = "pypi"
 
 [packages]
 pytest-playwright = "*"
+black = "*"
+isort = "*"
+python-dotenv = "*"
+pytest-check = "*"
 
 [dev-packages]
