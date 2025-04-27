@@ -1,7 +1,5 @@
-import pytest
 from playwright.sync_api import Page
-
-from steps.login_steps import LoginSteps
+import pytest
 
 
 class TestLoginPage:
@@ -17,3 +15,8 @@ class TestLoginPage:
         self.login_steps.click_on_submit_login()
 
         self.login_steps.verify_if_logged()
+
+# TODO: done on purpose to test linters
+from playwright.sync_api import Page
+
+from steps.login_steps import LoginSteps
