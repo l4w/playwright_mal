@@ -40,4 +40,4 @@ jobs:
       - name: Run isort
         if: steps.changed-files.outputs.changed_files != ''
         run: |
-          echo "${{ steps.changed-files.outputs.changed_files }}" | xargs isort --check-only
+          echo "${{ steps.changed-files.outputs.changed_files }}" | xargs isort --check
