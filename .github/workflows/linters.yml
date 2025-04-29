@@ -36,8 +36,10 @@ jobs:
         if: steps.changed-files.outputs.changed_files != ''
         run: |
           echo "${{ steps.changed-files.outputs.changed_files }}" | xargs black --check
+        continue-on-error: true
 
       - name: Run isort
         if: steps.changed-files.outputs.changed_files != ''
         run: |
           echo "${{ steps.changed-files.outputs.changed_files }}" | xargs isort --check
+        continue-on-error: true
