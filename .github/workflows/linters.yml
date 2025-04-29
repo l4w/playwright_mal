@@ -1,7 +1,7 @@
 name: Python linters on changed files
 on:
   pull_request:
-    branch: [main]
+    types: [opened, synchronize, reopened]
 
 jobs:
   linters:
@@ -28,6 +28,7 @@ jobs:
       - name: Get changed *py files
         id: changed-files
         run: |
+          git fetch origin ${{ github.base_ref }}
           FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- '*.py')
           echo "changed_files=$FILES" >> $GITHUB_OUTPUT
 
