@@ -29,7 +29,7 @@ jobs:
         id: changed-files
         run: |
           git fetch origin ${{ github.base_ref }}
-          FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- '*.py')
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD --diff-filter=d -- '*.py' | tr '\n' ' ')
           echo "changed_files=$FILES" >> $GITHUB_OUTPUT
 
       - name: Run black
