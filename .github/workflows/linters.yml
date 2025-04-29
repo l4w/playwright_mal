@@ -33,11 +33,11 @@ jobs:
           echo "changed_files=$FILES" >> $GITHUB_OUTPUT
 
       - name: Run black
-        if: steps.changed-files.output.changed_files != ''
+        if: steps.changed-files.outputs.changed_files != ''
         run: |
-          echo "${{ steps.changed-files.output.changed_files }}" | xargs black --check
+          echo "${{ steps.changed-files.outputs.changed_files }}" | xargs black --check
 
       - name: Run isort
-        if: steps.changed-files.output.changed_files != ''
+        if: steps.changed-files.outputs.changed_files != ''
         run: |
-          echo "${{ steps.changed-files.output.changed_files }}" | xargs isort --check-only
+          echo "${{ steps.changed-files.outputs.changed_files }}" | xargs isort --check-only
